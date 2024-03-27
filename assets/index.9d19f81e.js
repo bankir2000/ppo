@@ -4366,7 +4366,7 @@ function bu(e, t, n, s, r, o) {
     }, null, 8, ["checked", "value"]), B("span", pu, We(d), 1)]))), 128))])]), r.form.target_action ? (Y(),
     G("div", gu, [F(l, {
         for: "ammunition_consumption",
-        value: "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor 14.5"
+        value: "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor PKVT-14.5"
     }), F(c, {
         id: "ammunition_consumption",
         modelValue: r.form.ammunition_consumption,
@@ -4380,7 +4380,7 @@ function bu(e, t, n, s, r, o) {
     },
     G("div", gu, [F(l, {
         for: "ammunition_consumption1",
-        value: "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor 14.5"
+        value: "\u0410\u041a-74 5.45"
     }), F(c, {
         id: "ammunition_consumption1",
         modelValue: r.form.ammunition_consumption1,
@@ -4390,7 +4390,7 @@ function bu(e, t, n, s, r, o) {
         required: ""
     }, null, 8, ["modelValue"]), F(a, {
         class: "mt-2",
-        message: e.ammunition_consumptionErrorMessage
+        message: e.ammunition_consumption1ErrorMessage
     }, null, 8, ["message"])])) : bt("", !0), B("div", mu, [F(l, {
         for: "description",
         value: "\u041E\u043F\u0438\u0441:"
