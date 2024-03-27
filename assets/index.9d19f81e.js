@@ -4390,7 +4390,7 @@ function bu(e, t, n, s, r, o) {
         required: ""
     }, null, 8, ["modelValue"]), F(a, {
         class: "mt-2",
-        message: e.ammunition_consumption1ErrorMessage
+        message: e.ammunition_consumptionErrorMessage
     }, null, 8, ["message"])])) : bt("", !0), B("div", mu, [F(l, {
         for: "description",
         value: "\u041E\u043F\u0438\u0441:"
