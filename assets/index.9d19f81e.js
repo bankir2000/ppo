@@ -3872,8 +3872,8 @@ const Lc = Io(Tc, [["render", Fc]])
 ` : "") + (this.form.time ? "\u0427: " + this.form.time + `
 ` : "") + (this.form.disclosure ? "\u0412\u0438\u044F\u0432: " + this.form.disclosure + `
 ` : "") + (this.form.target_action ? "\u041F\u041F: " + this.form.target_action + `
-` : "") + (this.form.ammunition_consumption ? "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor PKVT-14.5=" + this.form.ammunition_consumption +  `
-` : "") + (this.form.ammunition_consumption1 ? "\u0410\u041a-74 5.45" + this.form.ammunition_consumption1 + `
+` : "") + (this.form.ammunition_consumption ? "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor KPVT-14.5=" + this.form.ammunition_consumption +  "шт" + `
+` : "") + (this.form.ammunition_avtomat ? "\u0410\u041a-74 5.45" + this.form.ammunition_avtomat + `
 ` : "") + (this.form.description ? "\u041E\u043F\u0438\u0441: " + this.form.description + `
 ` : "")
             }
@@ -4366,7 +4366,7 @@ function bu(e, t, n, s, r, o) {
     }, null, 8, ["checked", "value"]), B("span", pu, We(d), 1)]))), 128))])]), r.form.target_action ? (Y(),
     G("div", gu, [F(l, {
         for: "ammunition_consumption",
-        value: "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor PKVT-14.5"
+        value: "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor KPVT-14.5"
     }), F(c, {
         id: "ammunition_consumption",
         modelValue: r.form.ammunition_consumption,
