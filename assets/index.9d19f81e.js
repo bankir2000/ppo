@@ -4377,6 +4377,9 @@ function bu(e, t, n, s, r, o) {
     }, null, 8, ["modelValue"]), F(a, {
         class: "mt-2",
         message: e.ammunition_consumptionErrorMessage
+        G("div", gu, [F(l, {
+            for: "ammunition_consumption1",
+            value: "\u0410\u041a-74 5.45"
     }), F(c, {
         id: "ammunition_consumption1",
         modelValue: r.form.ammunition_consumption1,
