@@ -4377,20 +4377,6 @@ function bu(e, t, n, s, r, o) {
     }, null, 8, ["modelValue"]), F(a, {
         class: "mt-2",
         message: e.ammunition_consumptionErrorMessage
-    },
-    G("div", gu, [F(l, {
-        for: "ammunition_consumption1",
-        value: "\u0410\u041a-74 5.45"
-    }), F(c, {
-        id: "ammunition_consumption1",
-        modelValue: r.form.ammunition_consumption1,
-        "onUpdate:modelValue": t[21] || (t[21] = d=>r.form.ammunition_consumption1 = d),
-        type: "tel",
-        class: "mt-1 block w-full",
-        required: ""
-    }, null, 8, ["modelValue"]), F(a, {
-        class: "mt-2",
-        message: e.ammunition_consumptionErrorMessage
     }, null, 8, ["message"])])) : bt("", !0), B("div", mu, [F(l, {
         for: "description",
         value: "\u041E\u043F\u0438\u0441:"
