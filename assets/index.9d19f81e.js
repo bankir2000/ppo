@@ -4386,7 +4386,7 @@ function bu(e, t, n, s, r, o) {
     F(c, {
         id: "ak_ammunition_consumption",
         modelValue: r.form.ak_ammunition_consumption,
-        "onUpdate:modelValue": t[22] || (t[22] = d => r.form.ak_ammunition_consumption = d),
+        "onUpdate:modelValue": t[26] || (t[26] = d => r.form.ak_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
