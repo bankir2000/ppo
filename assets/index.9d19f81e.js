@@ -3872,7 +3872,7 @@ const Lc = Io(Tc, [["render", Fc]])
 ` : "") + (this.form.time ? "\u0427: " + this.form.time + `
 ` : "") + (this.form.disclosure ? "\u0412\u0438\u044F\u0432: " + this.form.disclosure + `
 ` : "") + (this.form.target_action ? "\u041F\u041F: " + this.form.target_action + `
-` : "") + (this.form.ammunition_consumption ? "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor KPVT-14.5=" + this.form.ammunition_consumption +  "шт (в т.ч. БЗТ-" + Math.round(this.form.ammunition_consumption / 4) + "шт, МДЗ-" + this.form.ammunition_consumption - Math.round(this.form.ammunition_consumption / 4) + "шт)" + `
+` : "") + (this.form.ammunition_consumption ? "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor KPVT-14.5=" + this.form.ammunition_consumption +  "шт (в т.ч. БЗТ-" + Math.round(this.form.ammunition_consumption / 4) + "шт, МДЗ-" + (this.form.ammunition_consumption - Math.round(this.form.ammunition_consumption / 4)) + "шт)" + `
 ` : "") + (this.form.ammunition_avtomat ? "\u0410\u041a-74 5.45" + this.form.ammunition_avtomat + `
 ` : "") + (this.form.description ? "\u041E\u043F\u0438\u0441: " + this.form.description + ` 
 ` : "")
