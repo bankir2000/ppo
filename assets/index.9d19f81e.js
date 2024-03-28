@@ -4395,24 +4395,19 @@ function bu(e, t, n, s, r, o) {
     F(a, {
         class: "mt-2",
         message: e.ammunition_consumptionErrorMessage
-    }),
-    // Поле для введення опису
-    B("div", mu, [
-        F(l, {
-            for: "description",
-            value: "\u041E\u043F\u0438\u0441:"
-        }),
-        Ps(B("textarea", {
-            id: "description",
-            "onUpdate:modelValue": t[23] || (t[23] = d => r.form.description = d),
-            class: "mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm pl-2 text-lg",
-            rows: "5"
-        }, null, 512), [[dc, r.form.description]]),
-        // Додання значення form.ak_ammunition_consumption до рядка, а не до description
-        F(l, null, (this.form.ak_ammunition_consumption ? "          \u0410\u041a74 5.45-" + this.form.ak_ammunition_consumption + "шт (в т.ч. ТЗ-" + Math.round(this.form.ak_ammunition_consumption / 3) + "шт, ПС-" + (this.form.ak_ammunition_consumption - Math.round(this.form.ak_ammunition_consumption / 3)) + "шт)" + '\n' : "") + (this.form.description ? "\u041E\u043F\u0438\u0441: " + this.form.description + '\n' : ""))
-    ])
-])
- null, 8, ["message"])]), o.isMobile() ? (Y(),
+    }, null, 8, ["message"])])) : bt("", !0), B("div", mu, [F(l, {
+        for: "description",
+        value: "\u041E\u043F\u0438\u0441:"
+    }), Ps(B("textarea", {
+        id: "description",
+        "onUpdate:modelValue": t[22] || (t[22] = d=>r.form.description = d),
+        type: "tel",
+        class: "mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm pl-2 text-lg",
+        rows: "5"
+    }, null, 512), [[dc, r.form.description]]), F(a, {
+        class: "mt-2",
+        message: e.descriptionErrorMessage
+    }, null, 8, ["message"])]), o.isMobile() ? (Y(),
     G("div", _u, [B("button", {
         class: "bg-green-500 rounded text-white px-2 text-xl",
         onClick: t[23] || (t[23] = d=>o.copyToClipboard())
