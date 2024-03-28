@@ -3874,8 +3874,8 @@ const Lc = Io(Tc, [["render", Fc]])
 ` : "") + (this.form.time ? "\u0427: " + this.form.time + `
 ` : "") + (this.form.disclosure ? "\u0412\u0438\u044F\u0432: " + this.form.disclosure + `
 ` : "") + (this.form.target_action ? "\u041F\u041F: " + this.form.target_action + `
-` : "") + (this.form.ammunition_consumption ? "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor KPVT-14.5=" + this.form.ammunition_consumption +  "шт (в т.ч. БЗТ-" + Math.round(this.form.ammunition_consumption / 4) + "шт, МДЗ-" + (this.form.ammunition_consumption - Math.round(this.form.ammunition_consumption / 4)) + "шт)" + `
-` : "") + (this.form.ak_ammunition_consumption ? "          \u0410\u041a74 5.45-" + this.form.ak_ammunition_consumption + "шт (в т.ч. ТЗ-" + Math.round(this.form.ak_ammunition_consumption / 3) + "шт, ПС-" + (this.form.ak_ammunition_consumption-Math.round(this.form.ak_ammunition_consumption / 3)) + "шт)" + `
+` : "") + (this.form.ammunition_consumption ? "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a \u0417\u041a Victor KPVT-14.5=" + this.form.ammunition_consumption +  "шт (в т.ч. БЗТ-" + Math.round(this.form.ammunition_consumption / 4) + "шт, МДЗ-" + (this.form.ammunition_consumption - Math.round(this.form.ammunition_consumption / 4)) + "шт)" + `
+` : "") + (this.form.ak_ammunition_consumption ? "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a \u0410\u041a74 5.45-" + this.form.ak_ammunition_consumption + "шт (в т.ч. ТЗ-" + Math.round(this.form.ak_ammunition_consumption / 3) + "шт, ПС-" + (this.form.ak_ammunition_consumption-Math.round(this.form.ak_ammunition_consumption / 3)) + "шт)" + `
 ` : "") + (this.form.description ? "\u041E\u043F\u0438\u0441: " + this.form.description + `
 ` : "")
             }
@@ -4150,8 +4150,8 @@ const Lc = Io(Tc, [["render", Fc]])
   , yu = B("div", {
     class: "dark:text-white pt-4"
 }, [Mo(" \u042F\u043A\u0449\u043E \u0432 \u0432\u0430\u0441 \u0454 \u043F\u0440\u043E\u043F\u043E\u0437\u0438\u0446\u0456\u0457 \u0447\u0438 \u043F\u043E\u0431\u0430\u0436\u0430\u043D\u043D\u044F, \u043D\u0430\u043F\u0438\u0448\u0456\u0442\u044C \u043C\u0435\u043D\u0456 \u043D\u0430 \u043F\u043E\u0448\u0442\u0443 "), B("a", {
-    href: "mailto:ppo.bim.fail@proton.me"
-}, "ppo.bim.fail@proton.me")], -1);
+    href: "mailto:glazgoru2000@gmail.com"
+}, "glazgoru2000@gmail.com")], -1);
 function bu(e, t, n, s, r, o) {
     const i = Ft("Popup")
       , l = Ft("InputLabel")
@@ -4386,7 +4386,7 @@ function bu(e, t, n, s, r, o) {
     F(c, {
         id: "ak_ammunition_consumption",
         modelValue: r.form.ak_ammunition_consumption,
-        "onUpdate:modelValue": t[22] || (t[22] = d => r.form.ak_ammunition_consumption = d),
+        "onUpdate:modelValue": t[26] || (t[26] = d => r.form.ak_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
