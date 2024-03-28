@@ -3873,7 +3873,7 @@ const Lc = Io(Tc, [["render", Fc]])
 ` : "") + (this.form.disclosure ? "\u0412\u0438\u044F\u0432: " + this.form.disclosure + `
 ` : "") + (this.form.target_action ? "\u041F\u041F: " + this.form.target_action + `
 ` : "") + (this.form.ammunition_consumption ? "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor KPVT-14.5=" + this.form.ammunition_consumption +  "шт (в т.ч. БЗТ-" + Math.round(this.form.ammunition_consumption / 4) + "шт, МДЗ-" + (this.form.ammunition_consumption - Math.round(this.form.ammunition_consumption / 4)) + "шт)" + `
-` : "") + (this.form.ak_ammunition_consumption ? "\u0410\u041a74 5.45-" + this.form.ak_ammunition_consumption + "шт (в т.ч. ТЗ-" + Math.round(this.form.ak_ammunition_consumption / 3) + "шт, ПС-" + (this.form.ak_ammunition_consumption-Math.round(this.form.ak_ammunition_consumption / 3)) + "шт)" + `
+` : "") + (this.form.ak_ammunition_consumption ? "          \u0410\u041a74 5.45-" + this.form.ak_ammunition_consumption + "шт (в т.ч. ТЗ-" + Math.round(this.form.ak_ammunition_consumption / 3) + "шт, ПС-" + (this.form.ak_ammunition_consumption-Math.round(this.form.ak_ammunition_consumption / 3)) + "шт)" + `
 ` : "") + (this.form.description ? "\u041E\u043F\u0438\u0441: " + this.form.description + `
 ` : "")
             }
@@ -4364,17 +4364,33 @@ function bu(e, t, n, s, r, o) {
         name: "target_action",
         value: d
     }, null, 8, ["checked", "value"]), B("span", pu, We(d), 1)]))), 128))])]), r.form.target_action ? (Y(),
-    G("div", gu, [F(l, {
-        for: "ammunition_consumption",
-        value: "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor KPVT-14.5"
-    }), F(c, {
+    G("div", gu, [
+    // Поле для введення значення розходу боєприпасів
+    F(l, {
+        for: "ammunition_consumption"
+    }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor KPVT-14.5"),
+    F(c, {
         id: "ammunition_consumption",
         modelValue: r.form.ammunition_consumption,
-        "onUpdate:modelValue": t[21] || (t[21] = d=>r.form.ammunition_consumption = d),
+        "onUpdate:modelValue": t[21] || (t[21] = d => r.form.ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
-    }, null, 8, ["modelValue"]), F(a, {
+    }, null, 8, ["modelValue"]),
+    // Поле для введення значення з коментарем "АК74-5.45"
+    F(l, {
+        for: "ak_ammunition_consumption"
+    }, "АК74-5.45"),
+    F(c, {
+        id: "ak_ammunition_consumption",
+        modelValue: r.form.ak_ammunition_consumption,
+        "onUpdate:modelValue": t[22] || (t[22] = d => r.form.ak_ammunition_consumption = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
+    // Повідомлення про помилку, якщо воно є
+    F(a, {
         class: "mt-2",
         message: e.ammunition_consumptionErrorMessage
     }, null, 8, ["message"])])) : bt("", !0), B("div", mu, [F(l, {
