@@ -3837,6 +3837,7 @@ const Lc = Io(Tc, [["render", Fc]])
                 number_of_targets: null,
                 target_action: null,
                 ammunition_consumption: null,
+                ak_ammunition_consumption: null,
                 description: null
             },
             flags: {
@@ -3849,6 +3850,7 @@ const Lc = Io(Tc, [["render", Fc]])
             disclosure: ["\u0410\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E", "\u0412\u0456\u0437\u0443\u0430\u043B\u044C\u043D\u043E"],
             target_action: ["\u0423\u0440\u0430\u0436\u0435\u043D\u043E", "\u041F\u043E\u0448\u043A\u043E\u0434\u0436\u0435\u043D\u043E", "\u0423\u0440\u0430\u0436\u0435\u043d\u043d\u044f \u0446\u0456\u043b\u0456 \u0443\u0442\u043e\u0447\u043d\u044e\u0454\u0442\u044c\u0441\u044f"],
             ammunition_consumption: null,
+            ak_ammunition_consumption: null,
             description: null,
             popupMessage: null,
             now: new Date,
@@ -3864,7 +3866,7 @@ const Lc = Io(Tc, [["render", Fc]])
 ` : `
 `) + (this.form.target_description ? `\u041E\u043F\u0438\u0441: ${this.form.target_description}
 ` : "") + (this.form.height ? `\u0412\u0438\u0441\u043E\u0442\u0430: ${this.form.height}\u043C.
-` : "") + (this.form.distance ? `\u0423\u0440\u0430\u0436\u0435\u043d\u043d\u044f \u0446\u0456\u043b\u0456 \u0443\u0442\u043e\u0447\u043d\u044e\u0454\u0442\u044c\u0441\u044f: ${this.form.distance}\u043C.
+` : "") + (this.form.distance ? `\u0414\u0438\u0441\u0442\u0430\u043d\u0446\u0456\u044f (\u043c): ${this.form.distance}\u043C.
 ` : "") + (this.form.number_of_targets ? `\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C: ${this.form.number_of_targets}\u043E\u0434.
 ` : "") + (this.form.azimuth ? `\u0410: ${this.form.azimuth}\xB0
 ` : "") + (this.form.direction ? `\u041A: ${this.form.direction}\xB0
