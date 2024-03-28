@@ -4149,10 +4149,7 @@ const Lc = Io(Tc, [["render", Fc]])
 }
   , yu = B("div", {
     class: "dark:text-white pt-4"
-}, [Mo(" \u042F\u043A\u0449\u043E \u0432 \u0432\u0430\u0441 \u0454 \u043F\u0440\u043E\u043F\u043E\u0437\u0438\u0446\u0456\u0457 \u0447\u0438 \u043F\u043E\u0431\u0430\u0436\u0430\u043D\u043D\u044F, \u043D\u0430\u043F\u0438\u0448\u0456\u0442\u044C \u043C\u0435\u043D\u0456 \u043D\u0430 \u043F\u043E\u0448\u0442\u0443 "), B("a", {
-    href: "mailto:ppo.bim.fail@proton.me"
-}, "ppo.bim.fail@proton.me")], -1);
-function bu(e, t, n, s, r, o) {
+}, function bu(e, t, n, s, r, o) {
     const i = Ft("Popup")
       , l = Ft("InputLabel")
       , c = Ft("TextInput")
