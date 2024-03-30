@@ -4152,7 +4152,7 @@ const Lc = Io(Tc, [["render", Fc]])
 }
   , yu = B("div", {
     class: "dark:text-white pt-4"
-}, [Mo(" "), B("a", {
+}, [Mo("VIVERE MILITARE EST! Жити - значить боротися!"), B("a", {
     href: "mailto:gla@gmail.com"
 }, "")], -1);
 function bu(e, t, n, s, r, o) {
