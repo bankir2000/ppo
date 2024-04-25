@@ -3864,13 +3864,14 @@ const Lc = Io(Tc, [["render", Fc]])
         dataForClipboard() {
             return {
                 title: "\u041F\u043E\u0432\u0456\u0434\u043E\u043C\u043B\u0435\u043D\u043D\u044F \u043F\u0440\u043E \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043D\u044F \u0446\u0456\u043B\u0456",
-                text: (this.form.time ? "" + this.form.time + ) + (this.form.sign ? ` ${this.form.sign}
+                text: (this.form.time ? "" + this.form.time + ) 
+` : "") + (this.form.sign ? ` ${this.form.sign}
 ` : "") + (this.form.nearestCity ? ` ${this.form.nearestCity}                
 ` : "") + (this.form.target ? ` ${this.form.target}` : "") + (this.form.target_side ? ` (${this.form.target_side})
 ` : `
 `) + (this.form.target_description ? ` ${this.form.target_description}
 ` : "") + (this.form.height ? `\u0048- ${this.form.height}\u043C.
-` : "") + (this.form.distance ? `\u0414\u0438\u0441\u0442\u0430\u043d\u0446\u0456\u044f (\u043c): ${this.form.distance}\u043C.
+` : "") + (this.form.distance ? `\u0414- ${this.form.distance}\u043C.
 ` : "") + (this.form.number_of_targets ? `\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C: ${this.form.number_of_targets}\u043E\u0434.
 ` : "") + (this.form.azimuth ? `\u0410: ${this.form.azimuth}\xB0
 ` : "") + (this.form.direction ? `\u041A: ${this.form.direction}\xB0
