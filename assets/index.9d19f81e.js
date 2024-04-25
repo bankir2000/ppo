@@ -3864,6 +3864,7 @@ const Lc = Io(Tc, [["render", Fc]])
             return {
                 title: "\u041F\u043E\u0432\u0456\u0434\u043E\u043C\u043B\u0435\u043D\u043D\u044F \u043F\u0440\u043E \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043D\u044F \u0446\u0456\u043B\u0456",
                 text: (this.form.sign ? `\u041F: ${this.form.sign}
+` : "") + (this.form.time ? "\u0427: " + this.form.time + `                
 ` : "") + (this.form.target ? `\u0426\u0456\u043B\u044C: ${this.form.target}` : "") + (this.form.target_side ? ` (${this.form.target_side})
 ` : `
 `) + (this.form.target_description ? `\u041E\u043F\u0438\u0441: ${this.form.target_description}
@@ -3873,7 +3874,6 @@ const Lc = Io(Tc, [["render", Fc]])
 ` : "") + (this.form.azimuth ? `\u0410: ${this.form.azimuth}\xB0
 ` : "") + (this.form.direction ? `\u041A: ${this.form.direction}\xB0
 ` : "") + (this.form.nearestCity ? `\u041D.\u041F.: ${this.form.nearestCity}
-` : "") + (this.form.time ? "\u0427: " + this.form.time + `
 ` : "") + (this.form.disclosure ? "\u0412\u0438\u044F\u0432: " + this.form.disclosure + `
 ` : "") + (this.form.target_action ? "\u041F\u041F: " + this.form.target_action + `
 ` : "") + (this.form.tcil ? "\u0426\u0456\u043B\u044C: " + this.form.tcil + `
