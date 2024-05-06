@@ -4402,7 +4402,7 @@ function bu(e, t, n, s, r, o) {
     F(c, {
         id: "dshk_ammunition_consumption",
         modelValue: r.form.dshk_ammunition_consumption,
-        "onUpdate:modelValue": t[27] || (t[27] = d => r.form.dshk_ammunition_consumption = d),
+        "onUpdate:modelValue": t[28] || (t[28] = d => r.form.dshk_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
@@ -4414,7 +4414,7 @@ function bu(e, t, n, s, r, o) {
     F(c, {
         id: "browning_ammunition_consumption",
         modelValue: r.form.dbrowning_ammunition_consumption,
-        "onUpdate:modelValue": t[28] || (t[28] = d => r.form.browning_ammunition_consumption = d),
+        "onUpdate:modelValue": t[29] || (t[29] = d => r.form.browning_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
@@ -4426,7 +4426,7 @@ function bu(e, t, n, s, r, o) {
     F(c, {
         id: "pkm_ammunition_consumption",
         modelValue: r.form.pkm_ammunition_consumption,
-        "onUpdate:modelValue": t[29] || (t[29] = d => r.form.pkm_ammunition_consumption = d),
+        "onUpdate:modelValue": t[30] || (t[30] = d => r.form.pkm_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
