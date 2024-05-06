@@ -4386,7 +4386,7 @@ function bu(e, t, n, s, r, o) {
     // Поле для введення значення з коментарем "АК74-5.45"
     F(l, {
         for: "ak_ammunition_consumption"
-    }, "АК74-5.45мм"),
+    }, "АК74-5.45mm"),
     F(c, {
         id: "ak_ammunition_consumption",
         modelValue: r.form.ak_ammunition_consumption,
