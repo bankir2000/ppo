@@ -4374,7 +4374,7 @@ function bu(e, t, n, s, r, o) {
     }, null, 8, ["modelValue"]),
     F(l, {
         for: "ammunition_consumption"
-    }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor KPVT-14.5"),
+    }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor KPVT-14.5mm"),
     F(c, {
         id: "ammunition_consumption",
         modelValue: r.form.ammunition_consumption,
@@ -4386,11 +4386,47 @@ function bu(e, t, n, s, r, o) {
     // Поле для введення значення з коментарем "АК74-5.45"
     F(l, {
         for: "ak_ammunition_consumption"
-    }, "АК74-5.45"),
+    }, "АК74-5.45мм"),
     F(c, {
         id: "ak_ammunition_consumption",
         modelValue: r.form.ak_ammunition_consumption,
         "onUpdate:modelValue": t[26] || (t[26] = d => r.form.ak_ammunition_consumption = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
+        // Поле для введення значення з коментарем "ДШК-12.7мм"
+    F(l, {
+        for: "dshk_ammunition_consumption"
+    }, "ДШК-12.7mm"),
+    F(c, {
+        id: "dshk_ammunition_consumption",
+        modelValue: r.form.dshk_ammunition_consumption,
+        "onUpdate:modelValue": t[27] || (t[27] = d => r.form.dshk_ammunition_consumption = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
+        // Поле для введення значення з коментарем "Browning M2-12.7mm"
+    F(l, {
+        for: "browning_ammunition_consumption"
+    }, "Browning M2-12.7mm"),
+    F(c, {
+        id: "browning_ammunition_consumption",
+        modelValue: r.form.dbrowning_ammunition_consumption,
+        "onUpdate:modelValue": t[28] || (t[28] = d => r.form.browning_ammunition_consumption = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
+         // Поле для введення значення з коментарем "ПКМ-7.62mm"
+    F(l, {
+        for: "pkm_ammunition_consumption"
+    }, "ПКМ-7.62mm"),
+    F(c, {
+        id: "pkm_ammunition_consumption",
+        modelValue: r.form.pkm_ammunition_consumption,
+        "onUpdate:modelValue": t[29] || (t[29] = d => r.form.pkm_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
