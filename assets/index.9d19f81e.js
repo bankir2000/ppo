@@ -3840,6 +3840,9 @@ const Lc = Io(Tc, [["render", Fc]])
                 tcil: null,
                 ammunition_consumption: null,
                 ak_ammunition_consumption: null,
+                dshk_ammunition_consumption: null,
+                browning_ammunition_consumption: null,
+                pkm_ammunition_consumption: null,
                 description: null
             },
             flags: {
@@ -3854,6 +3857,9 @@ const Lc = Io(Tc, [["render", Fc]])
             tcil: null,
             ammunition_consumption: null,
             ak_ammunition_consumption: null,
+            dshk_ammunition_consumption: null,
+            browning_ammunition_consumption: null,
+            pkm_ammunition_consumption: null,
             description: null,
             popupMessage: null,
             now: new Date,
