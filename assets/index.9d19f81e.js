@@ -3843,6 +3843,7 @@ const Lc = Io(Tc, [["render", Fc]])
                 dshk_ammunition_consumption: null,
                 browning_ammunition_consumption: null,
                 pkm_ammunition_consumption: null,
+                m75_ammunition_consumption: null,
                 description: null
             },
             flags: {
@@ -4439,7 +4440,7 @@ function bu(e, t, n, s, r, o) {
     F(c, {
         id: "m75_ammunition_consumption",
         modelValue: r.form.m75_ammunition_consumption,
-        "onUpdate:modelValue": t[30] || (t[30] = d => r.form.m75_ammunition_consumption = d),
+        "onUpdate:modelValue": t[31] || (t[31] = d => r.form.m75_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
