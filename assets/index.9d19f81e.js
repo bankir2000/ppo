@@ -4431,6 +4431,18 @@ function bu(e, t, n, s, r, o) {
         class: "mt-1 block w-full",
         required: ""
     }, null, 8, ["modelValue"]),
+        // Поле для введення значення з коментарем "ПКМ-7.62mm"
+    F(l, {
+        for: "m75_ammunition_consumption"
+    }, "M75-20.0mm"),
+    F(c, {
+        id: "m75_ammunition_consumption",
+        modelValue: r.form.m75_ammunition_consumption,
+        "onUpdate:modelValue": t[30] || (t[30] = d => r.form.m75_ammunition_consumption = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
     // Повідомлення про помилку, якщо воно є
     F(a, {
         class: "mt-2",
