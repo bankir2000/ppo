@@ -3942,6 +3942,9 @@ const Lc = Io(Tc, [["render", Fc]])
             this.now = t,
             this.form.time = t.toLocaleTimeString("uk-UA", {
                 timeZone: "Europe/Kiev",
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
                 hourCycle: "h23",
                 hour: "2-digit",
                 minute: "2-digit"
