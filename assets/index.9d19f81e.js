@@ -4213,7 +4213,18 @@ function bu(e, t, n, s, r, o) {
         "onUpdate:checked": t[2] || (t[2] = _=>r.form.target_side = _),
         name: "target_side",
         value: d
-    }, null, 8, ["checked", "value"]), B("span", zc, We(d), 1)]))), 128))])]), B("div", qc, [F(l, {
+    }, F(l, {
+    for: "tcil"
+    }, "\u0426\u0456\u043B\u044C:"),
+    F(c, {
+        id: "tcil",
+        modelValue: r.form.tcil,
+        "onUpdate:modelValue": t[27] || (t[27] = d => r.form.tcil = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
+          null, 8, ["checked", "value"]), B("span", zc, We(d), 1)]))), 128))])]), B("div", qc, [F(l, {
         for: "number_of_targets",
         value: "\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C \u0446\u0456\u043B\u0435\u0439:"
     }), F(c, {
