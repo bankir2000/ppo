@@ -4367,17 +4367,17 @@ function bu(e, t, n, s, r, o) {
     }, null, 8, ["checked", "value"]), B("span", pu, We(d), 1)]))), 128))])]), r.form.target_action ? (Y(),
     G("div", gu, [
     // Поле для введення значення розходу боєприпасів
-    F(l, {
-        for: "tcil"
-    }, "\u0426\u0456\u043B\u044C:"),
-    F(c, {
-        id: "tcil",
-        modelValue: r.form.tcil,
-        "onUpdate:modelValue": t[27] || (t[27] = d => r.form.tcil = d),
-        type: "tel",
-        class: "mt-1 block w-full",
-        required: ""
-    }, null, 8, ["modelValue"]),
+    // F(l, {
+    //     for: "tcil"
+    // }, "\u0426\u0456\u043B\u044C:"),
+    // F(c, {
+    //     id: "tcil",
+    //     modelValue: r.form.tcil,
+    //     "onUpdate:modelValue": t[27] || (t[27] = d => r.form.tcil = d),
+    //     type: "tel",
+    //     class: "mt-1 block w-full",
+    //     required: ""
+    // }, null, 8, ["modelValue"]),
     F(l, {
         for: "ammunition_consumption"
     }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor KPVT-14.5mm"),
