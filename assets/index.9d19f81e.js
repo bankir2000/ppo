@@ -4381,7 +4381,7 @@ function bu(e, t, n, s, r, o) {
     // Поле для введення значення розходу боєприпасів
     F(l, {
         for: "ammunition_consumption"
-    }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: \u0417\u041a Victor KPVT-14.5mm"),
+    }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: ЗУ MR2 VIKTOR 14,5мм"),
     F(c, {
         id: "ammunition_consumption",
         modelValue: r.form.ammunition_consumption,
