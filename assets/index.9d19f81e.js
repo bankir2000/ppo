@@ -3885,7 +3885,7 @@ const Lc = Io(Tc, [["render", Fc]])
             }
         },
         signErrorMessage() {
-            return this.form.sign && this.form.sign.length > 40 ? "\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u043D\u0435 \u0431\u0456\u043B\u044C\u0448\u0435 20 \u0441\u0438\u043C\u0432\u043E\u043B\u0456\u0432" : null
+            return this.form.sign && this.form.sign.length > 60 ? "\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u043D\u0435 \u0431\u0456\u043B\u044C\u0448\u0435 60 \u0441\u0438\u043C\u0432\u043E\u043B\u0456\u0432" : null
         },
         targetDescriptionErrorMessage() {
             return this.form.target_description && this.form.target_description.length > 100 ? "\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u043D\u0435 \u0431\u0456\u043B\u044C\u0448\u0435 100 \u0441\u0438\u043C\u0432\u043E\u043B\u0456\u0432" : null
