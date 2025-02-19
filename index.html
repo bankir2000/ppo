@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="manifest" href="assets/manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/ppo/service-worker.js')
+      .then((reg) => console.log('Service Worker зареєстровано', reg))
+      .catch((err) => console.error('Помилка реєстрації Service Worker', err));
+  }
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
