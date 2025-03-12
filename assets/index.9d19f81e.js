@@ -3890,14 +3890,26 @@ const Lc = Io(Tc, [["render", Fc]])
         dataForClipboard() {
             return {
                 title: "\u041F\u043E\u0432\u0456\u0434\u043E\u043C\u043B\u0435\u043D\u043D\u044F \u043F\u0440\u043E \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043D\u044F \u0446\u0456\u043B\u0456",
-                text: (this.form.date ? ("" + this.form.date).replace(":", ".") + " " : "") + (this.form.time ? ("" + this.form.time).replace(":", ".") + " " : "") + (this.form.sign ? ` ${this.form.sign}` : "") + (this.form.nearestCity ? ` р-н \u043D.\u043F. ${this.form.nearestCity}` : "") + (this.form.target ? ` ${this.form.target}` : "") + (this.form.target_side ? ` ${this.form.target_side}` + " " : ``) + (this.form.target_description ? ` ${this.form.target_description}` + " " : "") + (this.form.tcil ? " № " + this.form.tcil + ". " : "") + (this.form.disclosure ? " " + this.form.disclosure + " " : "") + (this.form.number_of_targets ? `\u0020\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C: ${this.form.number_of_targets}\u043E\u0434. ` : "") + (() => {
-        let coords = [];
-        if (this.form.azimuth) coords.push(`А-${this.form.azimuth}°`);
-        if (this.form.direction) coords.push(`К-${this.form.direction}°`);
-        if (this.form.height) coords.push(`Н-${this.form.height}м.`);
-        if (this.form.distance) coords.push(`Д-${this.form.distance}м.`);
-        return coords.length ? ` (${coords.join(" ")})` : "";
-                })() + (this.form.target_action ? " \u0426\u0456\u043b\u044c \u043e\u0431\u0441\u0442\u0440\u0456\u043b\u044f\u043d\u043e, " + this.form.target_action + ". " : "") +
+                text:
+                    (this.form.date ? ("" + this.form.date).replace(":", ".") + " " : "") +
+                    (this.form.time ? ("" + this.form.time).replace(":", ".") + " " : "") +
+                    (this.form.who_disclosed ? this.form.who_disclosed : "") +
+                    (this.form.sign ? ` ${this.form.sign}` : "") +
+                    (this.form.nearestCity ? ` р-н \u043D.\u043F. ${this.form.nearestCity}` : "") +
+                    (this.form.target ? ` ${this.form.target}` : "") +
+                    (this.form.target_side ? ` ${this.form.target_side}` + " " : ``) +
+                    (this.form.target_description ? ` ${this.form.target_description}` + " " : "") +
+                    (this.form.tcil ? " № " + this.form.tcil + ". " : "") +
+                    (this.form.disclosure ? " " + this.form.disclosure + " " : "") +
+                    (this.form.number_of_targets ? `\u0020\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C: ${this.form.number_of_targets}\u043E\u0434. ` : "") +
+                    (() => {
+                        let coords = [];
+                        if (this.form.azimuth) coords.push(`А-${this.form.azimuth}°`);
+                        if (this.form.direction) coords.push(`К-${this.form.direction}°`);
+                        if (this.form.height) coords.push(`Н-${this.form.height}м.`);
+                        if (this.form.distance) coords.push(`Д-${this.form.distance}м.`);
+                        return coords.length ? ` (${coords.join(" ")})` : "";
+                    })() + (this.form.target_action ? " \u0426\u0456\u043b\u044c \u043e\u0431\u0441\u0442\u0440\u0456\u043b\u044f\u043d\u043e, " + this.form.target_action + ". " : "") +
                     (this.form.ammunition_consumption ? "Витрати БК ЗУ MR2 VIKTOR 14,5мм=" + this.form.ammunition_consumption +  "шт. (в т.ч. БЗТ-" + Math.round(this.form.ammunition_consumption / 4) + "шт., МДЗ-" + (this.form.ammunition_consumption - Math.round(this.form.ammunition_consumption / 4)) + "шт.)." + " " : "") +
                     (this.form.ak_ammunition_consumption ? "Витрати БК \u0410\u041a74-5.45mm=" + this.form.ak_ammunition_consumption + "шт (в т.ч. ТЗ-" + Math.round(this.form.ak_ammunition_consumption / 3) + "шт., ПС-" + (this.form.ak_ammunition_consumption-Math.round(this.form.ak_ammunition_consumption / 3)) + "шт.)." + `` : "") +
                     (this.form.dshk_ammunition_consumption ? "Витрати БК \u0414\u0428\u041a-12.7mm=" + this.form.dshk_ammunition_consumption + "шт. " : "") +
@@ -3914,9 +3926,6 @@ const Lc = Io(Tc, [["render", Fc]])
                     (this.form.zku_ammunition_consumption ? "Витрати БК ЗКУ=" + this.form.zku_ammunition_consumption + "шт. " : "") +
 
                     (this.form.m75_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 M75-20.0mm=" + this.form.m75_ammunition_consumption + "шт. " : "") +
-
-                    (this.form.who_disclosed ? "Виявлено військами: " + this.form.who_disclosed : "") +
-
                     (this.form.description ? " " + this.form.description + `` : "")
             }
         },
