@@ -4468,7 +4468,7 @@ function bu(e, t, n, s, r, o) {
         modelValue: r.form.ammunition_consumption,
         "onUpdate:modelValue": t[21] || (t[21] = d => r.form.ammunition_consumption = d),
         type: "number",
-        class: "mt-1 block w-full",
+        class: "mt-1 block w-full mb-4",
         required: ""
     }, null, 8, ["modelValue"]),
     // Поле для введення значення з коментарем "АК74-5.45"
@@ -4480,7 +4480,7 @@ function bu(e, t, n, s, r, o) {
         modelValue: r.form.ak_ammunition_consumption,
         "onUpdate:modelValue": t[26] || (t[26] = d => r.form.ak_ammunition_consumption = d),
         type: "number",
-        class: "mt-1 block w-full",
+        class: "mt-1 block w-full mb-4",
         required: ""
     }, null, 8, ["modelValue"]),
         // Поле для введення значення з коментарем "ДШК-12.7мм"
@@ -4492,7 +4492,7 @@ function bu(e, t, n, s, r, o) {
         modelValue: r.form.dshk_ammunition_consumption,
         "onUpdate:modelValue": t[28] || (t[28] = d => r.form.dshk_ammunition_consumption = d),
         type: "number",
-        class: "mt-1 block w-full",
+        class: "mt-1 block w-full mb-4",
         required: ""
     }, null, 8, ["modelValue"]),
         // Поле для введення значення з коментарем "Browning M2-12.7mm"
@@ -4504,7 +4504,7 @@ function bu(e, t, n, s, r, o) {
         modelValue: r.form.dbrowning_ammunition_consumption,
         "onUpdate:modelValue": t[29] || (t[29] = d => r.form.browning_ammunition_consumption = d),
         type: "number",
-        class: "mt-1 block w-full",
+        class: "mt-1 block w-full mb-4",
         required: ""
     }, null, 8, ["modelValue"]),
          // Поле для введення значення з коментарем "ПКМ-7.62mm"
@@ -4516,7 +4516,7 @@ function bu(e, t, n, s, r, o) {
         modelValue: r.form.pkm_ammunition_consumption,
         "onUpdate:modelValue": t[30] || (t[30] = d => r.form.pkm_ammunition_consumption = d),
         type: "number",
-        class: "mt-1 block w-full",
+        class: "mt-1 block w-full mb-4",
         required: ""
     }, null, 8, ["modelValue"]),
         // Поле для введення значення з коментарем "ПКМ-7.62mm"
@@ -4528,7 +4528,7 @@ function bu(e, t, n, s, r, o) {
         modelValue: r.form.m75_ammunition_consumption,
         "onUpdate:modelValue": t[31] || (t[31] = d => r.form.m75_ammunition_consumption = d),
         type: "number",
-        class: "mt-1 block w-full",
+        class: "mt-1 block w-full mb-4",
         required: ""
     }, null, 8, ["modelValue"]),
         F(l, { for: "zu_23_ammunition_consumption" }, "ЗУ-23"),
@@ -4537,7 +4537,7 @@ function bu(e, t, n, s, r, o) {
             modelValue: r.form.zu_23_ammunition_consumption,
             "onUpdate:modelValue": t[32] || (t[32] = d => r.form.zu_23_ammunition_consumption = d),
             type: "number",
-            class: "mt-1 block w-full",
+            class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
         F(l, { for: "maxim_mg_ammunition_consumption" }, "кулемет Максим"),
@@ -4546,7 +4546,7 @@ function bu(e, t, n, s, r, o) {
             modelValue: r.form.maxim_mg_ammunition_consumption,
             "onUpdate:modelValue": t[33] || (t[33] = d => r.form.maxim_mg_ammunition_consumption = d),
             type: "number",
-            class: "mt-1 block w-full",
+            class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
         F(l, { for: "rpk_74_ammunition_consumption" }, "РПК-74"),
@@ -4555,7 +4555,7 @@ function bu(e, t, n, s, r, o) {
             modelValue: r.form.rpk_74_ammunition_consumption,
             "onUpdate:modelValue": t[34] || (t[34] = d => r.form.rpk_74_ammunition_consumption = d),
             type: "number",
-            class: "mt-1 block w-full",
+            class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
         F(l, { for: "rkk_74_ammunition_consumption" }, "РКК-74"),
@@ -4564,7 +4564,7 @@ function bu(e, t, n, s, r, o) {
             modelValue: r.form.rkk_74_ammunition_consumption,
             "onUpdate:modelValue": t[35] || (t[35] = d => r.form.rkk_74_ammunition_consumption = d),
             type: "number",
-            class: "mt-1 block w-full",
+            class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
         F(l, { for: "dpm_ammunition_consumption" }, "ДПМ"),
@@ -4573,7 +4573,7 @@ function bu(e, t, n, s, r, o) {
             modelValue: r.form.dpm_ammunition_consumption,
             "onUpdate:modelValue": t[36] || (t[36] = d => r.form.dpm_ammunition_consumption = d),
             type: "number",
-            class: "mt-1 block w-full",
+            class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
         F(l, { for: "rpd_44_ammunition_consumption" }, "РПД-44"),
@@ -4582,7 +4582,7 @@ function bu(e, t, n, s, r, o) {
             modelValue: r.form.rpd_44_ammunition_consumption,
             "onUpdate:modelValue": t[37] || (t[37] = d => r.form.rpd_44_ammunition_consumption = d),
             type: "number",
-            class: "mt-1 block w-full",
+            class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
         F(l, { for: "rp_46_ammunition_consumption" }, "РП-46"),
@@ -4591,7 +4591,7 @@ function bu(e, t, n, s, r, o) {
             modelValue: r.form.rp_46_ammunition_consumption,
             "onUpdate:modelValue": t[38] || (t[38] = d => r.form.rp_46_ammunition_consumption = d),
             type: "number",
-            class: "mt-1 block w-full",
+            class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
         F(l, { for: "zku_ammunition_consumption" }, "ЗКУ"),
@@ -4600,16 +4600,16 @@ function bu(e, t, n, s, r, o) {
             modelValue: r.form.zku_ammunition_consumption,
             "onUpdate:modelValue": t[39] || (t[39] = d => r.form.zku_ammunition_consumption = d),
             type: "number",
-            class: "mt-1 block w-full",
+            class: "mt-1 block w-full mb-4",
             required: ""
-        }, null, 8, ["modelValue"]),
+        }, null, 100, ["modelValue"]),
         F(l, { for: "canic_m2_ammunition_consumption" }, "Canik M2"),
         F(c, {
             id: "canic_m2_ammunition_consumption",
             modelValue: r.form.canic_m2_ammunition_consumption,
             "onUpdate:modelValue": t[40] || (t[40] = d => r.form.canic_m2_ammunition_consumption = d),
             type: "number",
-            class: "mt-1 block w-full",
+            class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
     // Повідомлення про помилку, якщо воно є
