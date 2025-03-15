@@ -3852,6 +3852,7 @@ const Lc = Io(Tc, [["render", Fc]])
                 rpd_44_ammunition_consumption: null,
                 rp_46_ammunition_consumption: null,
                 zku_ammunition_consumption: null,
+                canic_m2_ammunition_consumption: null,
                 description: null,
                 who_disclosed: null
             },
@@ -3878,6 +3879,7 @@ const Lc = Io(Tc, [["render", Fc]])
             rpd_44_ammunition_consumption: null,
             rp_46_ammunition_consumption: null,
             zku_ammunition_consumption: null,
+            canic_m2_ammunition_consumption: null,
             pkm_ammunition_consumption: null,
             m75_ammunition_consumption: null,
             description: null,
@@ -3924,6 +3926,7 @@ const Lc = Io(Tc, [["render", Fc]])
                     (this.form.rpd_44_ammunition_consumption ? "Витрати БК РПД-44=" + this.form.rpd_44_ammunition_consumption + "шт. " : "") +
                     (this.form.rp_46_ammunition_consumption ? "Витрати БК РП-46=" + this.form.rp_46_ammunition_consumption + "шт. " : "") +
                     (this.form.zku_ammunition_consumption ? "Витрати БК ЗКУ=" + this.form.zku_ammunition_consumption + "шт. " : "") +
+                    (this.form.canic_m2_ammunition_consumption ? "Витрати Canik M2=" + this.form.canic_m2_ammunition_consumption + "шт. " : "") +
 
                     (this.form.m75_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 M75-20.0mm=" + this.form.m75_ammunition_consumption + "шт. " : "") +
                     (this.form.description ? " " + this.form.description + `` : "")
@@ -4599,7 +4602,16 @@ function bu(e, t, n, s, r, o) {
             type: "number",
             class: "mt-1 block w-full",
             required: ""
-    }, null, 8, ["modelValue"]),
+        }, null, 8, ["modelValue"]),
+        F(l, { for: "canic_m2_ammunition_consumption" }, "Canik M2"),
+        F(c, {
+            id: "canic_m2_ammunition_consumption",
+            modelValue: r.form.canic_m2_ammunition_consumption,
+            "onUpdate:modelValue": t[40] || (t[40] = d => r.form.canic_m2_ammunition_consumption = d),
+            type: "number",
+            class: "mt-1 block w-full",
+            required: ""
+        }, null, 8, ["modelValue"]),
     // Повідомлення про помилку, якщо воно є
     F(a, {
         class: "mt-2",
