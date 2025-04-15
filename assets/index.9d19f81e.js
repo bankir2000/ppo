@@ -3890,10 +3890,17 @@ const Lc = Io(Tc, [["render", Fc]])
     },
     computed: {
         dataForClipboard() {
+            const dateFormatter = new Intl.DateTimeFormat('en-GB', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                timeZone: "Europe/Kiev",
+            })
+
             return {
                 title: "\u041F\u043E\u0432\u0456\u0434\u043E\u043C\u043B\u0435\u043D\u043D\u044F \u043F\u0440\u043E \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043D\u044F \u0446\u0456\u043B\u0456",
                 text:
-                    (this.form.date ? ("" + this.form.date).replace(":", ".") + " " : "") +
+                    (this.form.date ? ("" + dateFormatter.format(new Date(this.form.date))).replace(/\//g, '-') + " " : "") +
                     (this.form.time ? ("" + this.form.time).replace(":", ".") + " " : "") +
                     (this.form.who_disclosed ? this.form.who_disclosed : "") +
                     (this.form.sign ? ` ${this.form.sign}` : "") +
@@ -3912,21 +3919,21 @@ const Lc = Io(Tc, [["render", Fc]])
                         if (this.form.distance) coords.push(`Д-${this.form.distance}м.`);
                         return coords.length ? ` (${coords.join(" ")})` : "";
                     })() + (this.form.target_action ? " \u0426\u0456\u043b\u044c \u043e\u0431\u0441\u0442\u0440\u0456\u043b\u044f\u043d\u043e, " + this.form.target_action + ". " : "") +
-                    (this.form.ammunition_consumption ? "Витрати БК ЗУ MR2 VIKTOR 14,5мм=" + this.form.ammunition_consumption +  "шт. (в т.ч. БЗТ-" + Math.round(this.form.ammunition_consumption / 4) + "шт., МДЗ-" + (this.form.ammunition_consumption - Math.round(this.form.ammunition_consumption / 4)) + "шт.)." + " " : "") +
-                    (this.form.ak_ammunition_consumption ? "Витрати БК \u0410\u041a74-5.45mm=" + this.form.ak_ammunition_consumption + "шт (в т.ч. ТЗ-" + Math.round(this.form.ak_ammunition_consumption / 3) + "шт., ПС-" + (this.form.ak_ammunition_consumption-Math.round(this.form.ak_ammunition_consumption / 3)) + "шт.)." + `` : "") +
-                    (this.form.dshk_ammunition_consumption ? "Витрати БК \u0414\u0428\u041a-12.7mm=" + this.form.dshk_ammunition_consumption + "шт. " : "") +
-                    (this.form.browning_ammunition_consumption ? "Витрати БК Browning M2-12.7mm=" + this.form.browning_ammunition_consumption + "шт. " : "") +
-                    (this.form.pkm_ammunition_consumption ? "Витрати БК \u041f\u041a\u041c-7.62mm=" + this.form.pkm_ammunition_consumption + "шт. " : "") +
+                    (this.form.ammunition_consumption ? "Витрати БК ЗУ MR2 VIKTOR – 14.5мм=" + this.form.ammunition_consumption +  "шт. (в т.ч. БЗТ-" + Math.round(this.form.ammunition_consumption / 4) + "шт., МДЗ-" + (this.form.ammunition_consumption - Math.round(this.form.ammunition_consumption / 4)) + "шт.)." + " " : "") +
+                    (this.form.ak_ammunition_consumption ? "Витрати БК \u0410\u041a74 – 5.45mm=" + this.form.ak_ammunition_consumption + "шт (в т.ч. ТЗ-" + Math.round(this.form.ak_ammunition_consumption / 3) + "шт., ПС-" + (this.form.ak_ammunition_consumption-Math.round(this.form.ak_ammunition_consumption / 3)) + "шт.)." + `` : "") +
+                    (this.form.dshk_ammunition_consumption ? "Витрати БК \u0414\u0428\u041a – 12.7mm=" + this.form.dshk_ammunition_consumption + "шт. " : "") +
+                    (this.form.browning_ammunition_consumption ? "Витрати БК Browning M2 – 12.7mm=" + this.form.browning_ammunition_consumption + "шт. " : "") +
+                    (this.form.pkm_ammunition_consumption ? "Витрати БК \u041f\u041a\u041c – 7.62mm=" + this.form.pkm_ammunition_consumption + "шт. " : "") +
 
-                    (this.form.zu_23_ammunition_consumption ? "Витрати БК ЗУ-23=" + this.form.zu_23_ammunition_consumption + "шт. " : "") +
-                    (this.form.maxim_mg_ammunition_consumption ? "Витрати БК кулемет Максим=" + this.form.maxim_mg_ammunition_consumption + "шт. " : "") +
-                    (this.form.rpk_74_ammunition_consumption ? "Витрати БК РПК-74=" + this.form.rpk_74_ammunition_consumption + "шт. " : "") +
-                    (this.form.rkk_74_ammunition_consumption ? "Витрати БК РКК-74=" + this.form.rkk_74_ammunition_consumption + "шт. " : "") +
-                    (this.form.dpm_ammunition_consumption ? "Витрати БК ДПМ=" + this.form.dpm_ammunition_consumption + "шт. " : "") +
-                    (this.form.rpd_44_ammunition_consumption ? "Витрати БК РПД-44=" + this.form.rpd_44_ammunition_consumption + "шт. " : "") +
-                    (this.form.rp_46_ammunition_consumption ? "Витрати БК РП-46=" + this.form.rp_46_ammunition_consumption + "шт. " : "") +
-                    (this.form.zku_ammunition_consumption ? "Витрати БК ЗКУ=" + this.form.zku_ammunition_consumption + "шт. " : "") +
-                    (this.form.canic_m2_ammunition_consumption ? "Витрати Canik M2=" + this.form.canic_m2_ammunition_consumption + "шт. " : "") +
+                    (this.form.zu_23_ammunition_consumption ? "Витрати БК ЗУ-23-2 – 23.0mm=" + this.form.zu_23_ammunition_consumption + "шт. " : "") +
+                    (this.form.maxim_mg_ammunition_consumption ? "Витрати БК кулемет Максим – 7.62mm=" + this.form.maxim_mg_ammunition_consumption + "шт. " : "") +
+                    (this.form.rpk_74_ammunition_consumption ? "Витрати БК РПК-74 – 5.45mm=" + this.form.rpk_74_ammunition_consumption + "шт. " : "") +
+                    (this.form.rkk_74_ammunition_consumption ? "Витрати БК РКК-74 – 5.45mm=" + this.form.rkk_74_ammunition_consumption + "шт. " : "") +
+                    (this.form.dpm_ammunition_consumption ? "Витрати БК ДПМ – 7.62mm=" + this.form.dpm_ammunition_consumption + "шт. " : "") +
+                    (this.form.rpd_44_ammunition_consumption ? "Витрати БК РПД-44 – 7.62mm=" + this.form.rpd_44_ammunition_consumption + "шт. " : "") +
+                    (this.form.rp_46_ammunition_consumption ? "Витрати БК РП-46 – 7.62mm=" + this.form.rp_46_ammunition_consumption + "шт. " : "") +
+                    (this.form.zku_ammunition_consumption ? "Витрати БК ЗКУ – 14.5mm=" + this.form.zku_ammunition_consumption + "шт. " : "") +
+                    (this.form.canic_m2_ammunition_consumption ? "Витрати Canik M2 – 12.7 mm=" + this.form.canic_m2_ammunition_consumption + "шт. " : "") +
 
                     (this.form.m75_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 M75-20.0mm=" + this.form.m75_ammunition_consumption + "шт. " : "") +
                     (this.form.description ? " " + this.form.description + `` : "")
@@ -4004,12 +4011,14 @@ const Lc = Io(Tc, [["render", Fc]])
             this.form.time = `${time}`;
         },
         getCurrentDate: function () {
+            const test = new Date()
+
             const date = new Intl.DateTimeFormat('en-CA', {
-                timeZone: "Europe/Kiev",
-                year: 'numeric',
-                month: '2-digit',
                 day: '2-digit',
-            }).format(new Date())
+                month: '2-digit',
+                year: 'numeric',
+                timeZone: "Europe/Kiev",
+            }).format(test)
 
             this.form.date = `${date}`;
         },
@@ -4462,7 +4471,7 @@ function bu(e, t, n, s, r, o) {
     // Поле для введення значення розходу боєприпасів
     F(l, {
         for: "ammunition_consumption"
-    }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: ЗУ MR2 VIKTOR 14,5мм"),
+    }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: ЗУ MR2 VIKTOR – 14.5мм"),
     F(c, {
         id: "ammunition_consumption",
         modelValue: r.form.ammunition_consumption,
@@ -4474,7 +4483,7 @@ function bu(e, t, n, s, r, o) {
     // Поле для введення значення з коментарем "АК74-5.45"
     F(l, {
         for: "ak_ammunition_consumption"
-    }, "АК74-5.45mm"),
+    }, "АК74 – 5.45mm"),
     F(c, {
         id: "ak_ammunition_consumption",
         modelValue: r.form.ak_ammunition_consumption,
@@ -4486,7 +4495,7 @@ function bu(e, t, n, s, r, o) {
         // Поле для введення значення з коментарем "ДШК-12.7мм"
     F(l, {
         for: "dshk_ammunition_consumption"
-    }, "ДШК-12.7mm"),
+    }, "ДШК – 12.7mm"),
     F(c, {
         id: "dshk_ammunition_consumption",
         modelValue: r.form.dshk_ammunition_consumption,
@@ -4498,7 +4507,7 @@ function bu(e, t, n, s, r, o) {
         // Поле для введення значення з коментарем "Browning M2-12.7mm"
     F(l, {
         for: "browning_ammunition_consumption"
-    }, "Browning M2-12.7mm"),
+    }, "Browning M2 – 12.7mm"),
     F(c, {
         id: "browning_ammunition_consumption",
         modelValue: r.form.dbrowning_ammunition_consumption,
@@ -4510,7 +4519,7 @@ function bu(e, t, n, s, r, o) {
          // Поле для введення значення з коментарем "ПКМ-7.62mm"
     F(l, {
         for: "pkm_ammunition_consumption"
-    }, "ПКМ-7.62mm"),
+    }, "ПКМ – 7.62mm"),
     F(c, {
         id: "pkm_ammunition_consumption",
         modelValue: r.form.pkm_ammunition_consumption,
@@ -4522,7 +4531,7 @@ function bu(e, t, n, s, r, o) {
         // Поле для введення значення з коментарем "ПКМ-7.62mm"
     F(l, {
         for: "m75_ammunition_consumption"
-    }, "M75-20.0mm"),
+    }, "M75 – 20.0mm"),
     F(c, {
         id: "m75_ammunition_consumption",
         modelValue: r.form.m75_ammunition_consumption,
@@ -4531,7 +4540,7 @@ function bu(e, t, n, s, r, o) {
         class: "mt-1 block w-full mb-4",
         required: ""
     }, null, 8, ["modelValue"]),
-        F(l, { for: "zu_23_ammunition_consumption" }, "ЗУ-23"),
+        F(l, { for: "zu_23_ammunition_consumption" }, "ЗУ-23-2 – 23.0mm"),
         F(c, {
             id: "zu_23_ammunition_consumption",
             modelValue: r.form.zu_23_ammunition_consumption,
@@ -4540,7 +4549,7 @@ function bu(e, t, n, s, r, o) {
             class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
-        F(l, { for: "maxim_mg_ammunition_consumption" }, "кулемет Максим"),
+        F(l, { for: "maxim_mg_ammunition_consumption" }, "кулемет Максим – 7.62mm"),
         F(c, {
             id: "maxim_mg_ammunition_consumption",
             modelValue: r.form.maxim_mg_ammunition_consumption,
@@ -4549,7 +4558,7 @@ function bu(e, t, n, s, r, o) {
             class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
-        F(l, { for: "rpk_74_ammunition_consumption" }, "РПК-74"),
+        F(l, { for: "rpk_74_ammunition_consumption" }, "РПК-74 – 5.45mm"),
         F(c, {
             id: "rpk_74_ammunition_consumption",
             modelValue: r.form.rpk_74_ammunition_consumption,
@@ -4558,7 +4567,7 @@ function bu(e, t, n, s, r, o) {
             class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
-        F(l, { for: "rkk_74_ammunition_consumption" }, "РКК-74"),
+        F(l, { for: "rkk_74_ammunition_consumption" }, "РКК-74 – 5.45mm"),
         F(c, {
             id: "rkk_74_ammunition_consumption",
             modelValue: r.form.rkk_74_ammunition_consumption,
@@ -4567,7 +4576,7 @@ function bu(e, t, n, s, r, o) {
             class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
-        F(l, { for: "dpm_ammunition_consumption" }, "ДПМ"),
+        F(l, { for: "dpm_ammunition_consumption" }, "ДПМ – 7.62mm"),
         F(c, {
             id: "dpm_ammunition_consumption",
             modelValue: r.form.dpm_ammunition_consumption,
@@ -4576,7 +4585,7 @@ function bu(e, t, n, s, r, o) {
             class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
-        F(l, { for: "rpd_44_ammunition_consumption" }, "РПД-44"),
+        F(l, { for: "rpd_44_ammunition_consumption" }, "РПД-44 – 7.62mm"),
         F(c, {
             id: "rpd_44_ammunition_consumption",
             modelValue: r.form.rpd_44_ammunition_consumption,
@@ -4585,7 +4594,7 @@ function bu(e, t, n, s, r, o) {
             class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
-        F(l, { for: "rp_46_ammunition_consumption" }, "РП-46"),
+        F(l, { for: "rp_46_ammunition_consumption" }, "РП-46 – 7.62mm"),
         F(c, {
             id: "rp_46_ammunition_consumption",
             modelValue: r.form.rp_46_ammunition_consumption,
@@ -4594,7 +4603,7 @@ function bu(e, t, n, s, r, o) {
             class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 8, ["modelValue"]),
-        F(l, { for: "zku_ammunition_consumption" }, "ЗКУ"),
+        F(l, { for: "zku_ammunition_consumption" }, "ЗКУ – 14.5mm"),
         F(c, {
             id: "zku_ammunition_consumption",
             modelValue: r.form.zku_ammunition_consumption,
@@ -4603,7 +4612,7 @@ function bu(e, t, n, s, r, o) {
             class: "mt-1 block w-full mb-4",
             required: ""
         }, null, 100, ["modelValue"]),
-        F(l, { for: "canic_m2_ammunition_consumption" }, "Canik M2"),
+        F(l, { for: "canic_m2_ammunition_consumption" }, "Canik M2 – 12.7 mm"),
         F(c, {
             id: "canic_m2_ammunition_consumption",
             modelValue: r.form.canic_m2_ammunition_consumption,
