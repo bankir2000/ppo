@@ -3875,15 +3875,75 @@ const Lc = Io(Tc, [["render", Fc]])
         dataForClipboard() {
             return {
                 title: "\u041F\u043E\u0432\u0456\u0434\u043E\u043C\u043B\u0435\u043D\u043D\u044F \u043F\u0440\u043E \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043D\u044F \u0446\u0456\u043B\u0456",
-                text: (this.form.time ? ("" + this.form.time).replace(":", ".") + " " : "") + (this.form.sign ? ` ${this.form.sign}` : "") + (this.form.nearestCity ? ` р-н \u043D.\u043F. ${this.form.nearestCity}` : "") + (this.form.target ? ` ${this.form.target}` : "") + (this.form.target_side ? ` ${this.form.target_side}` + " " : ``) + (this.form.target_description ? ` ${this.form.target_description}` + " " : "") + (this.form.tcil ? " № " + this.form.tcil + ". " : "") + (this.form.disclosure ? " " + this.form.disclosure + " " : "") + (this.form.number_of_targets ? `\u0020\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C: ${this.form.number_of_targets}\u043E\u0434. ` : "") + (() => {
-        let coords = [];
-        if (this.form.azimuth) coords.push(`А-${this.form.azimuth}°`);
-        if (this.form.direction) coords.push(`К-${this.form.direction}°`);
-        if (this.form.height) coords.push(`Н-${this.form.height}м.`);
-        if (this.form.distance) coords.push(`Д-${this.form.distance}м.`);
-        return coords.length ? ` (${coords.join(" ")})` : "";
-      })() + (this.form.target_action ? " \u0426\u0456\u043b\u044c \u043e\u0431\u0441\u0442\u0440\u0456\u043b\u044f\u043d\u043e, " + this.form.target_action + ". " : "") + (this.form.ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a ЗУ MR2 VIKTOR 14,5мм=" + this.form.ammunition_consumption +  "шт. (в т.ч. БЗТ-" + Math.round(this.form.ammunition_consumption / 4) + "шт., МДЗ-" + (this.form.ammunition_consumption - Math.round(this.form.ammunition_consumption / 4)) + "шт.)." + " " : "") + (this.form.dva_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a ЗУ MR2 VIKTOR 14,5мм=" + this.form.dva_ammunition_consumption +  "шт. (в т.ч. БЗТ-" + Math.round(this.form.dva_ammunition_consumption / 3) + "шт., МДЗ-" + (this.form.dva_ammunition_consumption - Math.round(this.form.dva_ammunition_consumption / 3)) + "шт.)." + " " : "") + (this.form.ak_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0410\u041a74-5.45mm=" + this.form.ak_ammunition_consumption + "шт (в т.ч. ТЗ-" + Math.round(this.form.ak_ammunition_consumption / 3) + "шт., ПС-" + (this.form.ak_ammunition_consumption-Math.round(this.form.ak_ammunition_consumption / 3)) + "шт.)." + `` : "") + (this.form.dshk_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0414\u0428\u041a-12.7mm=" + this.form.dshk_ammunition_consumption + "шт. " : "") + (this.form.browning_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a Browning M2-12.7mm=" + this.form.browning_ammunition_consumption + "шт. " : "") + (this.form.pkm_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u041f\u041a\u041c-7.62mm=" + this.form.pkm_ammunition_consumption + "шт. " : "") + (this.form.m75_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 M75-20.0mm=" + this.form.m75_ammunition_consumption + "шт. " : "") + (this.form.description ? " " + this.form.description + `` : "")
+                text:
+  (this.form.time ? ("" + this.form.time).replace(":", ".") + " " : "") +
+  (this.form.sign ? ` ${this.form.sign}` : "") +
+  (this.form.nearestCity ? ` р-н н.п. ${this.form.nearestCity}` : "") +
+  (this.form.target ? ` ${this.form.target}` : "") +
+  (this.form.target_side ? ` ${this.form.target_side}` + " " : ``) +
+  (this.form.target_description ? ` ${this.form.target_description}` + " " : "") +
+  (this.form.tcil ? " № " + this.form.tcil + ". " : "") +
+  (this.form.disclosure ? " " + this.form.disclosure + " " : "") +
+  (this.form.number_of_targets ? ` Кількість: ${this.form.number_of_targets}од. ` : "") +
+  (() => {
+    let coords = [];
+    if (this.form.azimuth) coords.push(`А-${this.form.azimuth}°`);
+    if (this.form.direction) coords.push(`К-${this.form.direction}°`);
+    if (this.form.height) coords.push(`Н-${this.form.height}м.`);
+    if (this.form.distance) coords.push(`Д-${this.form.distance}м.`);
+    return coords.length ? ` (${coords.join(" ")})` : "";
+  })() +
+  (this.form.target_action ? " Ціль обстріляно, " + this.form.target_action + ". " : "") +
+  (() => {
+    let total = 0;
+    let bzt = 0;
+    let mdz = 0;
 
+    if (this.form.ammunition_consumption) {
+      const amt = Number(this.form.ammunition_consumption);
+      total += amt;
+      const bzt1 = Math.round(amt / 4);
+      const mdz1 = amt - bzt1;
+      bzt += bzt1;
+      mdz += mdz1;
+    }
+
+    if (this.form.dva_ammunition_consumption) {
+      const amt = Number(this.form.dva_ammunition_consumption);
+      total += amt;
+      const bzt2 = Math.round(amt / 3);
+      const mdz2 = amt - bzt2;
+      bzt += bzt2;
+      mdz += mdz2;
+    }
+
+    return total > 0
+      ? ` Витрати БК ЗУ MR2 VIKTOR 14,5мм=${total}шт. (в т.ч. БЗТ-${bzt}шт., МДЗ-${mdz}шт.). `
+      : "";
+  })() +
+  (this.form.ak_ammunition_consumption
+    ? "Витрати БК АК74-5.45mm=" +
+      this.form.ak_ammunition_consumption +
+      "шт (в т.ч. ТЗ-" +
+      Math.round(this.form.ak_ammunition_consumption / 3) +
+      "шт., ПС-" +
+      (this.form.ak_ammunition_consumption -
+        Math.round(this.form.ak_ammunition_consumption / 3)) +
+      "шт.)."
+    : "") +
+  (this.form.dshk_ammunition_consumption
+    ? " Витрати БК ДШК-12.7mm=" + this.form.dshk_ammunition_consumption + "шт. "
+    : "") +
+  (this.form.browning_ammunition_consumption
+    ? " Витрати БК Browning M2-12.7mm=" + this.form.browning_ammunition_consumption + "шт. "
+    : "") +
+  (this.form.pkm_ammunition_consumption
+    ? " Витрати БК ПКМ-7.62mm=" + this.form.pkm_ammunition_consumption + "шт. "
+    : "") +
+  (this.form.m75_ammunition_consumption
+    ? " Витрати M75-20.0mm=" + this.form.m75_ammunition_consumption + "шт. "
+    : "") +
+  (this.form.description ? " " + this.form.description : "")
             }
         },
         signErrorMessage() {
