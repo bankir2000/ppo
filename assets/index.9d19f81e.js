@@ -3845,6 +3845,8 @@ const Lc = Io(Tc, [["render", Fc]])
                 browning_ammunition_consumption: null,
                 pkm_ammunition_consumption: null,
                 m75_ammunition_consumption: null,
+                other_weapon: null,
+                other_weapon_ammo: null,
                 description: null
             },
             flags: {
@@ -3865,6 +3867,8 @@ const Lc = Io(Tc, [["render", Fc]])
             browning_ammunition_consumption: null,
             pkm_ammunition_consumption: null,
             m75_ammunition_consumption: null,
+            other_weapon: null,
+            other_weapon_ammo: null,
             description: null,
             popupMessage: null,
             now: new Date,
@@ -3942,6 +3946,10 @@ const Lc = Io(Tc, [["render", Fc]])
     : "") +
   (this.form.m75_ammunition_consumption
     ? " Витрати M75-20.0mm=" + this.form.m75_ammunition_consumption + "шт. "
+    : "") +
+  (this.form.description ? " " + this.form.description : "") +
+                    (this.form.other_weapon && this.form.other_weapon_ammo
+    ? " Витрати БК " + this.form.other_weapon + "=" + this.form.other_weapon_ammo + "шт. "
     : "") +
   (this.form.description ? " " + this.form.description : "")
             }
@@ -4052,7 +4060,8 @@ const Lc = Io(Tc, [["render", Fc]])
             this.form.sign = localStorage.getItem("Sign") || null,
             this.form.nearestCity = localStorage.getItem("nearestCity") || null,
             this.form.lat = localStorage.getItem("lat") || null,
-            this.form.lng = localStorage.getItem("lng") || null
+            this.form.lng = localStorage.getItem("lng") || null,
+            this.form.other_weapon = localStorage.getItem("other_weapon") || null
         },
         roundNearest5(e) {
             return Math.round(e / 5) * 5
@@ -4521,7 +4530,7 @@ function bu(e, t, n, s, r, o) {
         class: "mt-1 block w-full",
         required: ""
     }, null, 8, ["modelValue"]),
-        // Поле для введення значення з коментарем "ПКМ-7.62mm"
+        // Поле для введення значення з коментарем "М75-20.0мм"
     F(l, {
         for: "m75_ammunition_consumption"
     }, "M75-20.0mm"),
@@ -4533,7 +4542,37 @@ function bu(e, t, n, s, r, o) {
         class: "mt-1 block w-full",
         required: ""
     }, null, 8, ["modelValue"]),
-    // Повідомлення про помилку, якщо воно є
+        // Напис "Інше озброєння", з однаковим компонентом
+F(l, {
+    for: "other_weapon"
+}, "Інше озброєння"),
+// Поле для введення марки озброєння (зберігається в localStorage)
+F("input", {
+    id: "other_weapon",
+    type: "text",
+    class: "mt-1 block w-full",
+    value: localStorage.getItem("other_weapon") || "",
+    onInput: e => {
+        const val = e.target.value;
+        localStorage.setItem("other_weapon", val);
+        r.form.other_weapon = val;
+    }
+}, null, 8, ["modelValue"]),
+        
+        // Поле для введення значення з коментарем "Іншого озброєння"
+    F(l, {
+        for: "other_weapon_ammo"
+    }, "Кільсть БК іншого озброєння"),
+    F(c, {
+        id: "other_weapon_ammo",
+        modelValue: r.form.other_weapon_ammo,
+        "onUpdate:modelValue": t[33] || (t[33] = d => r.form.other_weapon_ammo = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
+
+// Повідомлення про помилку, якщо воно є
     F(a, {
         class: "mt-2",
         message: e.ammunition_consumptionErrorMessage
