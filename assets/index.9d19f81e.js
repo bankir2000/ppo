@@ -3840,6 +3840,7 @@ const Lc = Io(Tc, [["render", Fc]])
                 tcil: null,
                 ammunition_consumption: null,
                 dva_ammunition_consumption: null,
+                tre_ammunition_consumption: null,
                 ak_ammunition_consumption: null,
                 dshk_ammunition_consumption: null,
                 browning_ammunition_consumption: null,
@@ -3862,6 +3863,7 @@ const Lc = Io(Tc, [["render", Fc]])
             tcil: null,
             ammunition_consumption: null,
             dva_ammunition_consumption: null,
+            tre_ammunition_consumption: null,
             ak_ammunition_consumption: null,
             dshk_ammunition_consumption: null,
             browning_ammunition_consumption: null,
@@ -3902,6 +3904,7 @@ const Lc = Io(Tc, [["render", Fc]])
     let total = 0;
     let bzt = 0;
     let mdz = 0;
+    let b32 = 0;
 
     if (this.form.ammunition_consumption) {
       const amt = Number(this.form.ammunition_consumption);
@@ -3920,9 +3923,28 @@ const Lc = Io(Tc, [["render", Fc]])
       bzt += bzt2;
       mdz += mdz2;
     }
+      if (this.form.tre_ammunition_consumption) {
+  const amt = Number(this.form.tre_ammunition_consumption);
+  total += amt;
+
+  const fullCycles = Math.floor(amt / 4);
+  const remainder = amt % 4;
+
+  let bzt3 = fullCycles;
+  let b32_3 = fullCycles;
+  let mdz3 = fullCycles * 2;
+
+  if (remainder >= 1) bzt3 += 1;
+  if (remainder >= 2) b32_3 += 1;
+  if (remainder === 3) mdz3 += 1;
+
+  bzt += bzt3;
+  b32 += b32_3;
+  mdz += mdz3;
+}
 
     return total > 0
-      ? ` Витрати БК ЗУ MR2 VIKTOR 14,5мм=${total}шт. (в т.ч. БЗТ-${bzt}шт., МДЗ-${mdz}шт.). `
+      ? ` Витрати БК ЗУ MR2 VIKTOR 14,5мм=${total}шт. (в т.ч. БЗТ-${bzt}шт., МДЗ-${mdz}шт., Б32-${b32}шт.). `
       : "";
   })() +
   (this.form.ak_ammunition_consumption
@@ -4460,7 +4482,7 @@ function bu(e, t, n, s, r, o) {
     // Поле для введення значення розходу боєприпасів
     F(l, {
         for: "ammunition_consumption"
-    }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: ЗУ MR2 VIKTOR 14,5мм, стрічка 1-3"),
+    }, "ЗУ MR2 VIKTOR 14,5мм, стрічка 1БЗТ-3МДЗ"),
     F(c, {
         id: "ammunition_consumption",
         modelValue: r.form.ammunition_consumption,
@@ -4472,11 +4494,23 @@ function bu(e, t, n, s, r, o) {
         // Поле для введення значення розходу боєприпасів
     F(l, {
         for: "dva_ammunition_consumption"
-    }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: ЗУ MR2 VIKTOR 14,5мм, стрічка 1-2"),
+    }, "ЗУ MR2 VIKTOR 14,5мм, стрічка 1БЗТ-2МДЗ"),
     F(c, {
         id: "dva_ammunition_consumption",
         modelValue: r.form.dva_ammunition_consumption,
         "onUpdate:modelValue": t[32] || (t[32] = d => r.form.dva_ammunition_consumption = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
+        // Поле для введення значення розходу боєприпасів
+    F(l, {
+        for: "tre_ammunition_consumption"
+    }, "ЗУ MR2 VIKTOR 14,5мм, стрічка 1БЗТ-1Б32-2МДЗ"),
+    F(c, {
+        id: "tre_ammunition_consumption",
+        modelValue: r.form.tre_ammunition_consumption,
+        "onUpdate:modelValue": t[33] || (t[33] = d => r.form.tre_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
