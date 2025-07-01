@@ -4044,13 +4044,13 @@ const Lc = Io(Tc, [["render", Fc]])
         hour: "2-digit",
         minute: "2-digit"
     });
-    // const date = t.toLocaleDateString("uk-UA", {
-     //   timeZone: "Europe/Kiev",
-    //    day: "2-digit",
-     //   month: "2-digit",
-      //  year: "numeric"
-    //});
-    this.form.time = `${time}`;
+    const date = t.toLocaleDateString("uk-UA", {
+      timeZone: "Europe/Kiev",
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric"
+    });
+    this.form.time = `${date} ${time}`;
 },
         getCoordinates() {
             navigator.geolocation ? navigator.geolocation.getCurrentPosition(e=>{
