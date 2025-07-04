@@ -4599,7 +4599,7 @@ F("input", {
     F(c, {
         id: "other_weapon_ammo",
         modelValue: r.form.other_weapon_ammo,
-        "onUpdate:modelValue": t[33] || (t[33] = d => r.form.other_weapon_ammo = d),
+        "onUpdate:modelValue": t[34] || (t[34] = d => r.form.other_weapon_ammo = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
