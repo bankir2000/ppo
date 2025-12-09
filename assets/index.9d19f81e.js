@@ -3848,6 +3848,7 @@ const Lc = Io(Tc, [["render", Fc]])
                 m75_ammunition_consumption: null,
                 other_weapon: null,
                 other_weapon_ammo: null,
+                na_bch: null,
                 description: null
             },
             flags: {
@@ -3871,6 +3872,7 @@ const Lc = Io(Tc, [["render", Fc]])
             m75_ammunition_consumption: null,
             other_weapon: null,
             other_weapon_ammo: null,
+            na_bch: null,
             description: null,
             popupMessage: null,
             now: new Date,
@@ -3972,7 +3974,7 @@ const Lc = Io(Tc, [["render", Fc]])
   (this.form.other_weapon && this.form.other_weapon_ammo
     ? " Витрати БК " + this.form.other_weapon + "=" + this.form.other_weapon_ammo + "шт. "
     : "") +
-  (this.form.description ? " " + this.form.description : "")
+  (this.form.description ? " " + this.form.description : "") + (this.form.na_bch ? "Екіпаж: " + this.form.na_bch : "")
             }
         },
         signErrorMessage() {
@@ -4082,7 +4084,8 @@ const Lc = Io(Tc, [["render", Fc]])
             this.form.nearestCity = localStorage.getItem("nearestCity") || null,
             this.form.lat = localStorage.getItem("lat") || null,
             this.form.lng = localStorage.getItem("lng") || null,
-            this.form.other_weapon = localStorage.getItem("other_weapon") || null
+            this.form.other_weapon = localStorage.getItem("other_weapon") || null,
+            this.form.na_bch = localStorage.getItem("na_bch") || null
         },
         roundNearest5(e) {
             return Math.round(e / 5) * 5
@@ -4604,6 +4607,22 @@ F("input", {
         class: "mt-1 block w-full",
         required: ""
     }, null, 8, ["modelValue"]),
+    // Напис "На БЧ", з однаковим компонентом
+F(l, {
+    for: "na_bch"
+}, "На БЧ: "),
+// Поле для введення даних хто на БЧ (зберігається в localStorage)
+F("input", {
+    id: "na_bch",
+    type: "text",
+    class: "mt-1 block w-full",
+    value: localStorage.getItem("na_bch") || "",
+    onInput: e => {
+        const val = e.target.value;
+        localStorage.setItem("na_bch", val);
+        r.form.na_bch = val;
+    }
+}, null, 8, ["modelValue"]),
 
 // Повідомлення про помилку, якщо воно є
     F(a, {
@@ -6074,5 +6093,7 @@ const Is = yc(vu);
 Is.use(Ec());
 Is.use(Pf);
 Is.mount("#app");
+
+
 
 
