@@ -4327,7 +4327,7 @@ function bu(e, t, n, s, r, o) {
         id: "tcil",
         modelValue: r.form.tcil,
         "onUpdate:modelValue": t[27] || (t[27] = d => r.form.tcil = d),
-        type: "tel",
+        type: "text",
         class: "mt-1 block w-full",
         required: ""
     }, null, 8, ["modelValue"]),
@@ -6093,6 +6093,7 @@ const Is = yc(vu);
 Is.use(Ec());
 Is.use(Pf);
 Is.mount("#app");
+
 
 
 
