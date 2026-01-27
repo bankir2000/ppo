@@ -4469,7 +4469,7 @@ function bu(e, t, n, s, r, o) {
         value: d
     }, null, 8, ["checked", "value"]), B("span", au, We(d), 1)]))), 128))])]), B("div", du, [F(l, {
         for: "target_action",
-        value: "\u041F\u043E\u0432\u0456\u0442\u0440\u044F\u043D\u043E\u0433\u043E \u041F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0430:"
+        value: "\u041F\u043E\u0432\u0456\u0442\u0440\u044F\u043D\u043E\u0433\u043E \u041F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0430 🎯:"
     }), B("div", hu, [(Y(!0),
     G(de, null, cn(r.target_action, (d,p)=>(Y(),
     G("label", {
@@ -6093,6 +6093,7 @@ const Is = yc(vu);
 Is.use(Ec());
 Is.use(Pf);
 Is.mount("#app");
+
 
 
 
