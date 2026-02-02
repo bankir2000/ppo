@@ -3,7 +3,7 @@
     <link rel="manifest" href="assets/manifest.json">
 <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/ppo/service-worker.js')
+    navigator.serviceWorker.register('/assets/service-worker.js')
       .then((reg) => console.log('Service Worker зареєстровано', reg))
       .catch((err) => console.error('Помилка реєстрації Service Worker', err));
   }
@@ -28,3 +28,4 @@
 
 </body>
 </html>
+
