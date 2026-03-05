@@ -3974,7 +3974,7 @@ const Lc = Io(Tc, [["render", Fc]])
   (this.form.other_weapon && this.form.other_weapon_ammo
     ? " Витрати БК " + this.form.other_weapon + "=" + this.form.other_weapon_ammo + "шт. "
     : "") +
-  (this.form.description ? " " + this.form.description : "") + (this.form.na_bch ? "Екіпаж: " + this.form.na_bch : "")
+  (this.form.description ? " " + this.form.description : "") + (this.form.target_action && this.form.na_bch ? "На БЧ: " + this.form.na_bch : "")
             }
         },
         signErrorMessage() {
